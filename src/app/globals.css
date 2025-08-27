@@ -8,8 +8,17 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Brand colors (red + black) */
+  --color-primary: #e10600;        /* CTA red */
+  --color-primary-hover: #c10500;  /* hover red */
+  --color-inverse: #0a0a0a;        /* black sections (navbar/footer) */
+  --color-surface: #ffffff;        /* cards/panels on light */
+  --color-muted: #64748b;          /* secondary text */
+
+  /* Typography mapping (important bit) */
+  --font-display: var(--font-nunito); /* Nunito Sans → headings */
+  --font-sans: var(--font-heebo);     /* Heebo → body & buttons */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +28,44 @@
   }
 }
 
-body {
+@layer base {
+  body {
+    /* Heebo is your body font */
+    font-family: var(--font-heebo);
+    /* Use your light/dark CSS vars directly */
+    background: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Semantic utilities for short, consistent JSX */
+@layer components {
+  /* Headings use Nunito Sans (display font) */
+  .h1 { @apply font-display font-bold tracking-tight text-4xl md:text-5xl; }
+  .h2 { @apply font-display font-semibold tracking-tight text-3xl md:text-4xl; }
+  .lead { @apply text-lg md:text-xl text-foreground/90; }
+  .muted { @apply text-muted; }
+
+  /* Buttons use Heebo (body font); variants control color only */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full font-semibold
+           transition focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-hover focus:ring-primary;
+  }
+  .btn-dark {
+    @apply btn bg-inverse text-white hover:opacity-90 focus:ring-inverse;
+  }
+  .btn-light {
+    @apply btn bg-white text-foreground hover:bg-white/90 focus:ring-foreground;
+  }
+}
+
+/* body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */

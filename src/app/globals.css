@@ -10,15 +10,15 @@
   --color-foreground: var(--foreground);
 
   /* Brand colors (red + black) */
-  --color-primary: #e10600;        /* CTA red */
-  --color-primary-hover: #c10500;  /* hover red */
-  --color-inverse: #0a0a0a;        /* black sections (navbar/footer) */
-  --color-surface: #ffffff;        /* cards/panels on light */
-  --color-muted: #64748b;          /* secondary text */
+  --color-primary: #e10600; /* CTA red */
+  --color-primary-hover: #c10500; /* hover red */
+  --color-inverse: #0a0a0a; /* black sections (navbar/footer) */
+  --color-surface: #ffffff; /* cards/panels on light */
+  --color-muted: #64748b; /* secondary text */
 
   /* Typography mapping (important bit) */
   --font-display: var(--font-nunito); /* Nunito Sans → headings */
-  --font-sans: var(--font-heebo);     /* Heebo → body & buttons */
+  --font-sans: var(--font-heebo); /* Heebo → body & buttons */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,24 +43,42 @@
 /* Semantic utilities for short, consistent JSX */
 @layer components {
   /* Headings use Nunito Sans (display font) */
-  .h1 { @apply font-display font-bold tracking-tight text-4xl md:text-5xl; }
-  .h2 { @apply font-display font-semibold tracking-tight text-3xl md:text-4xl; }
-  .lead { @apply text-lg md:text-xl text-foreground/90; }
-  .muted { @apply text-muted; }
+  .h1 {
+    @apply font-display font-bold tracking-tight text-4xl md:text-5xl;
+  }
+  .h2 {
+    @apply font-display font-semibold tracking-tight text-3xl md:text-4xl;
+  }
+  .lead {
+    @apply text-lg md:text-xl text-foreground/90;
+  }
+  .muted {
+    @apply text-muted;
+  }
 
-  /* Buttons use Heebo (body font); variants control color only */
-  .btn {
+  /* Shared button base — applied to ALL variants at once */
+  .btn,
+  .btn-primary,
+  .btn-dark,
+  .btn-light {
     @apply inline-flex items-center justify-center rounded-full font-semibold
            transition focus:outline-none focus:ring-2 focus:ring-offset-2;
   }
+
+  /* Neutral button (no color) */
+  .btn {
+    @apply bg-white text-foreground hover:bg-white/90 focus:ring-foreground;
+  }
+
+  /* Variants (NOTICE: no "@apply btn" anywhere) */
   .btn-primary {
-    @apply btn bg-primary text-white hover:bg-primary-hover focus:ring-primary;
+    @apply bg-primary text-white hover:bg-primary-hover focus:ring-primary;
   }
   .btn-dark {
-    @apply btn bg-inverse text-white hover:opacity-90 focus:ring-inverse;
+    @apply bg-inverse text-white hover:opacity-90 focus:ring-inverse;
   }
   .btn-light {
-    @apply btn bg-white text-foreground hover:bg-white/90 focus:ring-foreground;
+    @apply bg-white text-foreground hover:bg-white/90 focus:ring-foreground;
   }
 }
 

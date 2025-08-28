@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="en" className={`${nunito.variable} ${heebo.variable}`}>
       <body className="min-h-screen antialiased">
         <NavBar />
-        <main className="pt-20">{children}</main>
+        <main>{children}</main>
 
         <footer className="mt-16 border-t">
           <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-600 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">

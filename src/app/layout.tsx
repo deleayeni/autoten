@@ -1,8 +1,10 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
+import Link from "next/link";
 import { Nunito_Sans, Heebo } from "next/font/google";
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Auto Ten — Driven by Trust",
@@ -36,20 +38,7 @@ export default function RootLayout({
       <body className="min-h-screen antialiased">
         <NavBar />
         <main>{children}</main>
-
-        <footer className="mt-16 border-t">
-          <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-600 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} Auto Ten LTD. Driven by Trust.</p>
-            <div className="flex gap-6">
-              <a href="/privacy" className="hover:text-gray-800">
-                Privacy
-              </a>
-              <a href="/terms" className="hover:text-gray-800">
-                Terms
-              </a>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

@@ -1,5 +1,7 @@
 // src/app/contact/page.tsx
 export const metadata = { title: "Contact Us • Auto Ten" };
+import MapEmbed from "@/components/MapEmbed";
+
 export default function ContactPage() {
   return (
     <div className="pt-[var(--header-h)]">
@@ -9,6 +11,7 @@ export default function ContactPage() {
           Phone: +234 000 000 000 • Email: hello@autoten.com
         </p>
       </main>
+      <MapEmbed />
     </div>
   );
 }

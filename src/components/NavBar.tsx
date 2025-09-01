@@ -59,7 +59,7 @@ export default function NavBar() {
           <span className="sr-only">Auto Ten</span>
         </Link>
 
-        <div className="flex items-center gap-6 text-sm">
+        <div className="flex items-center gap-6 text-xl">
           {links.map(({ name, href }) => {
             const active =
               pathname === href || (href !== "/" && pathname.startsWith(href));
@@ -82,7 +82,11 @@ export default function NavBar() {
               </Link>
             );
           })}
-          <Button asChild variant={solid ? "dark" : "light"}>
+          <Button
+            asChild
+            variant={solid ? "dark" : "light"}
+            className="text-xl"
+          >
             <Link href="/vehicles">View Cars</Link>
           </Button>
         </div>

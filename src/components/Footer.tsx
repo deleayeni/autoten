@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-black text-gray-300 mt-16">
-      <div className="mx-auto max-w-6xl px-4 py-12 grid gap-8 sm:grid-cols-3">
+      <div className="mx-auto max-w-6xl px-4 py-12 grid gap-8 sm:grid-cols-4">
         {/* Company Info */}
         <div>
           <h3 className="font-semibold text-white text-lg">Auto Ten LTD</h3>
@@ -54,6 +54,7 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* Opening Hours */}
         <div>
           <h3 className="font-semibold text-white text-lg">Opening Hours</h3>
           <ul className="mt-2 space-y-1 text-sm">
@@ -63,7 +64,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Socials */}
         {/* Socials */}
         <div>
           <h3 className="font-semibold text-white text-lg">Connect</h3>
@@ -124,6 +124,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
       {/* Bottom Strip */}
       <div className="border-t border-gray-700 py-4 text-center text-xs text-gray-500">
         © {new Date().getFullYear()} Auto Ten LTD. All rights reserved.

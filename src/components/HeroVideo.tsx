@@ -27,7 +27,7 @@ export default function HeroVideo() {
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white px-4">
-        <h1 className="h1">Unleash Your Drive</h1>
+        <h1 className="h1">Driven by Trust</h1>
         <p className="lead mt-3 text-white">Find your next car with us</p>
         <Button asChild className="mt-6">
           <Link href="/vehicles">View Vehicles</Link>

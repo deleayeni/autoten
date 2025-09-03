@@ -19,9 +19,9 @@ export default function Rentals() {
           <Image
             src="/brownviewlogohd.png"
             alt="Brownview"
-            width={240} // Increased width
+            width={320} // Increased width
             height={240} // Increased height
-            className="h-60 w-60" // Tailwind classes for consistent sizing
+            className="h-60 w-80" // Tailwind classes for consistent sizing
           />
           <div className="text-center">
             <h1 className="text-3xl font-bold">

@@ -2,6 +2,7 @@ import HeroVideo from "@/components/HeroVideo";
 import Link from "next/link";
 import MapEmbed from "@/components/MapEmbed";
 import TopBar from "@/components/TopBar";
+import BrandLogos from "@/components/BrandLogos";
 
 export default function Home() {
   return (
@@ -39,12 +40,13 @@ export default function Home() {
           </div>
 
           {/* Read More */}
-          <div className="mt-10">
+          <div className="mt-10 mb-10">
             <Link href="/about" className="btn btn-dark">
               Read More
             </Link>
           </div>
         </div>
+        <BrandLogos />
       </section>
       <TopBar />
       <MapEmbed />
